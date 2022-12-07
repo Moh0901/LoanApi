@@ -1,0 +1,69 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:49276"
+  },
+  "Routes": [
+    //Loan Api
+    {
+      "UpstreamPathTemplate": "/api/Loans",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7200
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Loans"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Loans/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7200
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Loans/{id}"
+    },
+    //User Api
+    {
+      "UpstreamPathTemplate": "/api/Users",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7172
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Users/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7172
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Users/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Auth",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7172
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth"
+    }
+  ]
+}
